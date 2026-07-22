@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>T.L.B.D. English School | To Learn By Doing</title>
+
+  <meta
+    name="description"
+    content="T.L.B.D. English School. Aprende inglés mediante una metodología de inmersión, práctica, repetición y exposición a situaciones de la vida real."
+  >
+
+  <style>
+    /* ================================
+       CONFIGURACIÓN GENERAL
+    ================================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --azul: #071a3d;
+      --azul-claro: #0d3b78;
+      --dorado: #f2c94c;
+      --blanco: #ffffff;
+      --gris-claro: #f4f7fb;
+      --gris: #667085;
+      --oscuro: #101828;
+      --verde: #16845b;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--gris-claro);
+      color: var(--oscuro);
+      line-height: 1.7;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    section {
+      padding: 90px 7%;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* ================================
+       BOTONES
+    ================================= */
+
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      margin: 6px;
+      border-radius: 30px;
+      background: var(--dorado);
+      color: var(--azul);
+      font-weight: bold;
+      transition: 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      background: var(--blanco);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--dorado);
+      color: var(--dorado);
+    }
+
+    .btn-outline:hover {
+      background: var(--dorado);
+      color: var(--azul);
+    }
+
+    /* ================================
+       HEADER
+    ================================= */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(7, 26, 61, 0.98);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+
+    nav {
+      max-width: 1300px;
+      margin: auto;
+      padding: 18px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      color: var(--blanco);
+      font-size: 22px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: var(--dorado);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    nav ul a {
+      color: var(--blanco);
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    nav ul a:hover {
+      color: var(--dorado);
+    }
+
+    /* ================================
+       HERO
+    ================================= */
+
+    .hero {
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--blanco);
+
+      background:
+        linear-gradient(
+          rgba(7, 26, 61, 0.84),
+          rgba(7, 26, 61, 0.92)
+        ),
+        url("assets/images/exterior.jpg")
+        center/cover no-repeat;
+    }
+
+    .hero-content {
+      max-width: 900px;
+    }
+
+    .hero h1 {
+      font-size: clamp(50px, 8vw, 90px);
+      margin-bottom: 10px;
+    }
+
+    .hero h2 {
+      color: var(--dorado);
+      font-size: clamp(24px, 4vw, 40px);
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 21px;
+      margin-bottom: 25px;
+    }
+
+    /* ================================
+       TÍTULOS
+    ================================= */
+
+    .section-title {
+      text-align: center;
+      max-width: 850px;
+      margin: 0 auto 50px;
+    }
+
+    .section-title h2 {
+      color: var(--azul);
+      font-size: clamp(30px, 5vw, 45px);
+      margin-bottom: 15px;
+    }
+
+    .section-title p {
+      color: var(--gris);
+    }
+
+    .dark-title h2 {
+      color: var(--blanco);
+    }
+
+    /* ================================
+       TARJETAS
+    ================================= */
+
+    .grid {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns:
+        repeat(auto-fit, minmax(270px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: var(--blanco);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+      transition: 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    .card h3 {
+      color: var(--azul-claro);
+      margin-bottom: 12px;
+      font-size: 22px;
+    }
+
+    .card p {
+      color: #555;
+    }
+
+    /* ================================
+       NOSOTROS
+    ================================= */
+
+    #nosotros {
+      background: var(--blanco);
+    }
+
+    /* ================================
+       MISIÓN / VISIÓN
+    ================================= */
+
+    .mission-vision {
+      background: var(--gris-claro);
+    }
+
+    /* ================================
+       VALORES
+    ================================= */
+
+    #valores {
+      background: var(--blanco);
+    }
+
+    .value-icon {
+      font-size: 35px;
+      margin-bottom: 10px;
+    }
+
+    /* ================================
+       METODOLOGÍA
+    ================================= */
+
+    #metodologia {
+      background: var(--gris-claro);
+    }
+
+    /* ================================
+       PROMESA
+    ================================= */
+
+    .promise {
+      background:
+        linear-gradient(
+          135deg,
+          var(--azul),
+          var(--azul-claro)
+        );
+      color: var(--blanco);
+      text-align: center;
+    }
+
+    .promise h2 {
+      color: var(--dorado);
+      font-size: clamp(30px, 5vw, 50px);
+      margin-bottom: 25px;
+    }
+
+    .promise-text {
+      max-width: 900px;
+      margin: auto;
+      font-size: 19px;
+    }
+
+    .promise-quote {
+      margin: 30px auto;
+      padding: 25px;
+      border: 2px solid var(--dorado);
+      border-radius: 20px;
+      max-width: 800px;
+      color: var(--dorado);
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    /* ================================
+       CURSOS
+    ================================= */
+
+    #cursos {
+      background: var(--blanco);
+    }
+
+    .course-card {
+      border-top: 5px solid var(--dorado);
+    }
+
+    .course-card .course-info {
+      margin-top: 15px;
+      color: var(--gris);
+    }
+
+    /* ================================
+       INSCRIPCIÓN
+    ================================= */
+
+    #inscripcion {
+      background: var(--gris-claro);
+    }
+
+    .free-badge {
+      display: inline-block;
+      padding: 8px 15px;
+      background: var(--verde);
+      color: white;
+      border-radius: 20px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .price {
+      font-size: 42px;
+      color: var(--azul-claro);
+      font-weight: bold;
+      margin: 15px 0;
+    }
+
+    .highlight {
+      border: 3px solid var(--dorado);
+    }
+
+    /* ================================
+       FORMULARIO
+    ================================= */
+
+    .form-container {
+      max-width: 850px;
+      margin: 40px auto 0;
+      background: var(--blanco);
+      padding: 35px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+    }
+
+    form {
+      display: grid;
+      gap: 18px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #d0d5dd;
+      border-radius: 10px;
+      font-size: 16px;
+      font-family: inherit;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    /* ================================
+       EQUIPO
+    ================================= */
+
+    #equipo {
+      background: var(--blanco);
+    }
+
+    .teacher-card {
+      text-align: center;
+    }
+
+    .teacher-photo {
+      width: 170px;
+      height: 170px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      border: 5px solid var(--dorado);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    /* ================================
+       GALERÍA
+    ================================= */
+
+    #galeria {
+      background: var(--gris-claro);
+    }
+
+    .gallery {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery-item {
+      background: var(--blanco);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .gallery-caption {
+      padding: 15px;
+      text-align: center;
+      font-weight: bold;
+      color: var(--azul);
+    }
+
+    /* ================================
+       VIDEOS
+    ================================= */
+
+    #videos {
+      background: var(--azul);
+      color: var(--blanco);
+    }
+
+    .video-card {
+      background: var(--blanco);
+      border-radius: 18px;
+      overflow: hidden;
+    }
+
+    .video-card video {
+      width: 100%;
+      display: block;
+    }
+
+    .video-caption {
+      color: var(--azul);
+      padding: 18px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    /* ================================
+       IDENTIDAD INSTITUCIONAL
+    ================================= */
+
+    #identidad {
+      background: var(--blanco);
+    }
+
+    .identity-image {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 15px;
+      margin-bottom: 20px;
+    }
+
+    /* ================================
+       CERTIFICADOS
+    ================================= */
+
+    #certificados {
+      background: var(--gris-claro);
+    }
+
+    /* ================================
+       HISTORIA
+    ================================= */
+
+    #historia {
+      background: var(--azul);
+      color: var(--blanco);
+    }
+
+    #historia .section-title h2 {
+      color: var(--blanco);
+    }
+
+    .history-text {
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+      font-size: 18px;
+    }
+
+    /* ================================
+       FUNDADOR
+    ================================= */
+
+    #fundador {
+      background: var(--blanco);
+    }
+
+    .founder-message {
+      max-width: 850px;
+      margin: auto;
+      padding: 45px;
+      background: var(--gris-claro);
+      border-radius: 25px;
+      text-align: center;
+      font-size: 24px;
+      font-style: italic;
+      color: var(--azul);
+      border-left: 6px solid var(--dorado);
+    }
+
+    /* ================================
+       REGLAMENTO
+    ================================= */
+
+    #reglamento {
+      background: var(--gris-claro);
+    }
+
+    .rules {
+      max-width: 950px;
+      margin: auto;
+    }
+
+    .rules ol {
+      padding-left: 25px;
+    }
+
+    .rules li {
+      background: var(--blanco);
+      margin-bottom: 12px;
+      padding: 15px 20px;
+      border-radius: 10px;
+    }
+
+    /* ================================
+       PRIVACIDAD
+    ================================= */
+
+    #privacidad {
+      background: var(--blanco);
+    }
+
+    /* ================================
+       CONTACTO
+    ================================= */
+
+    #contacto {
+      background: var(--gris-claro);
+    }
+
+    .contact-card {
+      text-align: center;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 25px;
+    }
+
+    .social-links a {
+      padding: 10px 18px;
+      background: var(--azul);
+      color: var(--blanco);
+      border-radius: 25px;
+    }
+
+    .social-links a:hover {
+      background: var(--azul-claro);
+    }
+
+    /* ================================
+       FOOTER
+    ================================= */
+
+    footer {
+      background: #030b1c;
+      color: var(--blanco);
+      text-align: center;
+      padding: 45px 7%;
+    }
+
+    footer .gold {
+      color: var(--dorado);
+      font-weight: bold;
+    }
+
+    /* ================================
+       RESPONSIVE
+    ================================= */
+
+    @media (max-width: 850px) {
+
+      nav {
+        flex-direction: column;
+      }
+
+      nav ul {
+        gap: 12px;
+      }
+
+      .hero {
+        min-height: 80vh;
+      }
+
+      section {
+        padding: 65px 5%;
+      }
+
+      .founder-message {
+        padding: 30px;
+        font-size: 20px;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     NAVEGACIÓN
+===================================================== -->
+
+<header>
+
+  <nav>
+
+    <div class="logo">
+      T.L.B.D. <span>English School</span>
+    </div>
+
+    <ul>
+
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#mision">Misión</a></li>
+      <li><a href="#vision">Visión</a></li>
+      <li><a href="#metodologia">Metodología</a></li>
+      <li><a href="#cursos">Cursos</a></li>
+      <li><a href="#equipo">Equipo</a></li>
+      <li><a href="#inscripcion">Inscripción</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+
+    </ul>
+
+  </nav>
+
+</header>
+
+
+<!-- =====================================================
+     INICIO
+===================================================== -->
+
+<section class="hero" id="inicio">
+
+  <div class="hero-content">
+
+    <h1>T.L.B.D.</h1>
+
+    <h2>To Learn By Doing</h2>
+
+    <p>
+      Stop dreaming, start doing.
+    </p>
+
+    <p>
+      Una institución comprometida con la enseñanza de idiomas
+      y con la creación de nuevas oportunidades para nuestros estudiantes.
+    </p>
+
+    <a href="#inscripcion" class="btn">
+      Inscríbete
+    </a>
+
+    <a href="#metodologia" class="btn btn-outline">
+      Conoce nuestra metodología
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     NOSOTROS
+===================================================== -->
+
+<section id="nosotros">
+
+  <div class="section-title">
+
+    <h2>Sobre T.L.B.D.</h2>
+
+    <p>
+      T.L.B.D. To Learn By Doing es una institución orientada
+      al aprendizaje de idiomas y al desarrollo integral de jóvenes,
+      niños y adultos.
+    </p>
+
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+
+      <h3>Nuestra identidad</h3>
+
+      <p>
+        Nuestro propósito es crear un ambiente donde nuestros estudiantes
+        puedan aprender inglés y desarrollar nuevas herramientas para
+        ampliar sus oportunidades.
+      </p>
+
+    </div>
+
+    <div class="card">
+
+      <h3>Más que aprender un idioma</h3>
+
+      <p>
+        Buscamos que el aprendizaje de idiomas contribuya al crecimiento
+        personal, social y profesional de nuestros estudiantes.
+      </p>
+
+    </div>
+
+    <div class="card">
+
+      <h3>Nuestro compromiso</h3>
+
+      <p>
+        Trabajamos para ofrecer una metodología basada en la práctica,
+        la repetición, la exposición y la participación activa.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     HISTORIA
+===================================================== -->
+
+<section id="historia">
+
+  <div class="section-title dark-title">
+
+    <h2>Historia de T.L.B.D.</h2>
+
+    <p>
+      Conoce el origen y el camino recorrido por nuestra institución.
+    </p>
+
+  </div>
+
+  <div class="history-text">
+
+    <p>
+      La historia oficial de T.L.B.D. será incorporada en esta sección
+      utilizando el contenido institucional proporcionado por la dirección.
+    </p>
+
+    <br>
+
+    <p>
+      Este espacio será actualizado con la historia oficial de la institución.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     MISIÓN
+===================================================== -->
+
+<section id="mision" class="mission-vision">
+
+  <div class="section-title">
+
+    <h2>Nuestra misión</h2>
+
+    <p>
+      Crear un ambiente donde jóvenes, niños y adultos puedan aprender
+      el idioma inglés y desarrollar las herramientas necesarias para
+      crear nuevas oportunidades, ampliar sus posibilidades y alcanzar
+      mejores oportunidades tanto en el ámbito social como laboral.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VISIÓN
+===================================================== -->
+
+<section id="vision" class="mission-vision">
+
+  <div class="section-title">
+
+    <h2>Nuestra visión</h2>
+
+    <p>
+      Crear mejores jóvenes y mejores personas, con fundamentos sólidos,
+      una mente más creativa y un intelecto superior mediante el aprendizaje
+      de más de un idioma.
+    </p>
+
+    <br>
+
+    <p>
+      Nuestra visión contempla no solamente la enseñanza del inglés,
+      sino también el fomento del español y el francés, con el propósito
+      de formar personas bilingües y multilingües que en el futuro
+      puedan tener mejores oportunidades tanto en el área social como
+      en el área laboral.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VALORES
+===================================================== -->
+
+<section id="valores">
+
+  <div class="section-title">
+
+    <h2>Nuestros valores</h2>
+
+    <p>
+      Nuestros valores orientan nuestra forma de enseñar,
+      convivir y acompañar a cada estudiante.
+    </p>
+
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="value-icon">🤝</div>
+      <h3>Integridad</h3>
+      <p>
+        Optamos por tomar las mejores decisiones y seguir el mejor camino,
+        actuando siempre con integridad.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="value-icon">💙</div>
+      <h3>Comprensión</h3>
+      <p>
+        Tratamos de comprender a nuestros jóvenes y colocarnos en su
+        perspectiva para fomentar un mejor aprendizaje.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="value-icon">🤝</div>
+      <h3>Respeto</h3>
+      <p>
+        El respeto es fundamental entre todos los miembros de nuestra
+        comunidad educativa.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="value-icon">💬</div>
+      <h3>Comunicación</h3>
+      <p>
+        Promovemos una comunicación adecuada para comprender las necesidades
+        de nuestros estudiantes y acompañarlos en su proceso.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="value-icon">✅</div>
+      <h3>Responsabilidad</h3>
+      <p>
+        Creemos en cumplir nuestra palabra y asumir con responsabilidad
+        nuestro compromiso
